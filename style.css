@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    color: #f5f5f5;
+    background-color: #121212;
+    overflow-y: auto;
+}
+
+header {
+    height: 100vh;
+    position: relative;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.9) 100%);
+    background-size: 400% 400%;
+    animation: plasma 8s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes plasma {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.overlay {
+    z-index: 1;
+    padding: 2rem;
+    text-align: center;
+}
+
+.club-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+header h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: #0ff;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ffdd57;
+}
+
+.roles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.role-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    width: 150px;
+    text-align: center;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    background-color: #0ff;
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #00ccff;
+}
+
+.events {
+    padding: 4rem 1rem;
+    background-color: #222;
+    text-align: center;
+}
+
+.events h2 {
+    font-size: 2.5rem;
+    color: #0ff;
+    margin-bottom: 2rem;
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.1));
+    padding: 2rem;
+    border-radius: 8px;
+    color: #ffc107;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.memories {
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+.memories h2 {
+    font-size: 2.5rem;
+    color: #0ff;
+    margin-bottom: 1.5rem;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery-item {
+    background: #444;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    width: calc(33% - 1rem);
+    max-width: 200px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #333;
+    color: white;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .roles, .event-list, .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-card {
+        padding: 1.5rem;
+    }
+
+    .gallery-item {
+        width: calc(50% - 1rem);
+    }
+}
